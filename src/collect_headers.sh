@@ -9,6 +9,8 @@ if [[ -z "${TARGETS:-}" ]]; then
   exit 1
 fi
 
+HEADERS=("Strict-Transport-Security" "Content-Security-Policy" "X-Content-Type-Options" "Access-Control-Allow-Origin")
+
 for url in $TARGETS; do
   host=$(echo "$url" | awk -F/ '{print $3}')
   file="out/headers_${host}.txt"
