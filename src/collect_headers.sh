@@ -11,6 +11,9 @@ fi
 
 HEADERS=("Strict-Transport-Security" "Content-Security-Policy" "X-Content-Type-Options" "Access-Control-Allow-Origin")
 
+report="out/security_report.csv"
+echo "host,${HEADERS[*]}" | tr ' ' ',' > "$report"
+
 for url in $TARGETS; do
   host=$(echo "$url" | awk -F/ '{print $3}')
   file="out/headers_${host}.txt"
