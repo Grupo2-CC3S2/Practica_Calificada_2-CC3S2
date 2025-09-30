@@ -19,5 +19,13 @@ for url in $TARGETS; do
   file="out/headers_${host}.txt"
   echo "Consultando $url ..."
   curl -s -I "$url" > "$file"
-  echo "Headers guardados en $file"
+
+  results=()
+  for header in "${HEADERS[@]}"; do
+    if grep -qi "^$header" "$file"; then
+      results+=("OK")
+    else
+      results+=("FAIL")
+    fi
+  done
 done
