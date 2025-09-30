@@ -31,8 +31,10 @@ tools: # Verifica dependencias (curl, jq, bats)
 	fi
 
 build: # Prepara la estructura
+	@echo "Preparando estructura"
 	@make tools
 	@echo "Estructura preparada"
+	@echo "Puedes ejecutar 'make run' para iniciar el script principal."
 
 run: # Ejecutar collector.sh
 	@echo "Ejecutando collector.sh"
