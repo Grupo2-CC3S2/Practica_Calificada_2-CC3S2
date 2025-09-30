@@ -1,3 +1,5 @@
+TARGETS ?= https://openai.com https://example.com
+export TARGETS
 
 .DEFAULT_GOAL := help
 
@@ -36,8 +38,14 @@ build: # Prepara la estructura
 	@echo "Estructura preparada"
 	@echo "Puedes ejecutar 'make run' para iniciar el script principal."
 
-run: # Ejecutar collector.sh
-	@echo "Ejecutando collector.sh"
+run: # Ejecutar collector_headers.sh
+	@echo "Ejecutando collector_headers.sh"
+	@if [ -z "$$TARGETS" ]; then \
+		echo "Debes definir TARGETS (ej: make run TARGETS='https://example.com https://openai.com')"; \
+		exit 1; \
+	fi
+	bash src/collect_headers.sh
+
 
 test: # Corriendo pruebas unitarias
 	@echo "Corriendo pruebas unitarias"
