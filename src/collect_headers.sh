@@ -28,4 +28,8 @@ for url in $TARGETS; do
       results+=("FAIL")
     fi
   done
+
+  echo "$host,${results[*]}" | tr ' ' ',' >> "$report"
 done
+
+echo "Reporte generado en $report"
