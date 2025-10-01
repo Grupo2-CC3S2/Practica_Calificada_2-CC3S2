@@ -11,3 +11,9 @@ fi
 # Reglas de cumplimiento:
 MANDATORY=("Strict-Transport-Security" "Content-Security-Policy" "X-Content-Type-Options")
 OPTIONAL=("Access-Control-Allow-Origin")
+
+input="out/security_report.csv"
+output="out/policy_compliance.csv"
+
+echo "host,compliance" > "$output"
+tail -n +2 "$input" > out/tmp_results.csv
