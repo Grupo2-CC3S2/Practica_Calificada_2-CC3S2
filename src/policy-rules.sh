@@ -17,3 +17,13 @@ output="out/policy_compliance.csv"
 
 echo "host,compliance" > "$output"
 tail -n +2 "$input" > out/tmp_results.csv
+
+while IFS=, read -r host hsts csp xcto cors; do
+  status="OK"
+
+  [[ "$hsts" == "FAIL" ]] && status="FAIL"
+  [[ "$csp" == "FAIL" ]] && status="FAIL"
+  [[ "$xcto" == "FAIL" ]] && status="FAIL"
+
+  echo "$host,$status" >> "$output"
+done < out/tmp_results.csv
