@@ -48,7 +48,7 @@ setup_file() {
 
 
 # Verificación de archivo CSV no vacío
-@test "El script genera un archivo CSV no vacío" {
+@test "El script collector_headers.sh genera un archivo CSV no vacío" {
   # Arrange
   rm -f out/security_report.csv
 
@@ -59,6 +59,19 @@ setup_file() {
   [ "$status" -eq 0 ]
   [ -f out/security_report.csv ]
   [ -s out/security_report.csv ]
+}
+
+@test "El script policy-rules.sh genera un archivo de políticas no vacío" {
+  # Arrange
+  rm -f out/policy_compliance.csv
+
+  # Act
+  run bash src/policy-rules.sh
+
+  # Assert
+  [ "$status" -eq 0 ]
+  [ -f out/policy_compliance.csv ]
+  [ -s out/policy_compliance.csv ]
 }
 
 # Verificación de contenido del CSV
