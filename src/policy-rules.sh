@@ -7,3 +7,7 @@ if [[ ! -f "out/security_report.csv" ]]; then
   echo "No existe out/security_report.csv. Ejecuta collect_headers.sh primero." >&2
   exit 1
 fi
+
+# Reglas de cumplimiento:
+MANDATORY=("Strict-Transport-Security" "Content-Security-Policy" "X-Content-Type-Options")
+OPTIONAL=("Access-Control-Allow-Origin")
