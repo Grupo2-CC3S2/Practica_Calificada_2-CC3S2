@@ -27,3 +27,6 @@ while IFS=, read -r host hsts csp xcto cors; do
 
   echo "$host,$status" >> "$output"
 done < out/tmp_results.csv
+
+echo "Reporte de cumplimiento generado en $output"
+cat "$output"
