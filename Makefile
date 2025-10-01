@@ -8,9 +8,15 @@ DIST_DIR := dist
 report := ${OUT_DIR}/security_report.csv
 policy := ${OUT_DIR}/policy_compliance.csv
 
+${OUT_DIR}/security_report.csv: ${SRC_DIR}/collect_headers.sh
+	@bash $<
+
+${OUT_DIR}/policy_compliance.csv: ${SRC_DIR}/policy-rules.sh ${OUT_DIR}/security_report.csv
+	@bash $<
+
 .DEFAULT_GOAL := help
 
-.PHONY: tools build run test help clear idempt clear-all
+.PHONY: tools build test help clear idempt clear-all
 
 help: # Muestra los comandos disponibles
 	@echo "Comandos disponibles:"
@@ -67,18 +73,8 @@ build: # Prepara la estructura
 	@echo "Archivos creados, estructura preparada"
 	@echo "Para ejecutar, make run"
 
-run: # Ejecutar collect_headers.sh
-	@echo "Ejecutando collect_headers.sh"
-	@if [ -z "$$TARGETS" ]; then \
-		echo "Debes definir TARGETS (ej: make run TARGETS='https://example.com https://openai.com')"; \
-		exit 1; \
-	fi
-	@bash ${SRC_DIR}/collect_headers.sh > /dev/null 2>&1
-	@echo "Ejecución completada. Revisa ${report} para el reporte."
-	@echo "Ejecutando policy-rules.sh"
-	@bash ${SRC_DIR}/policy-rules.sh > /dev/null 2>&1
-	@echo "Políticas aplicadas. Revisa ${policy} para el reporte final."
-
+run: ${OUT_DIR}/policy_compliance.csv
+	@echo "Ejecución completada. Reportes listos en ${OUT_DIR}/"
 
 test: # Corriendo pruebas unitarias
 	@make clear-files
@@ -102,12 +98,12 @@ clear: # Limpia todo, inclutendo directorios
 idempt: # Verifica idempotencia de make run
 	@echo "Verificando idempotencia de 'make run'"
 	@echo "------Primera ejecución------"
-	@make run > /dev/null 2>&1
+	@make -B run > /dev/null 2>&1
 	@cp ${report} ${report}.tmp
 	@cp ${policy} ${policy}.tmp
 	@make clear-files
 	@echo "------Segunda ejecución------"
-	@make run > /dev/null 2>&1
+	@make -B run > /dev/null 2>&1
 	@echo "Resultados:"
 	@if cmp -s ${report} ${report}.tmp; then \
 		echo "- Idempotencia verificada para collector_headers.sh: El archivo ${report} no cambió en la segunda ejecución."; \
