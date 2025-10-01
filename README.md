@@ -3,6 +3,10 @@ Repositorio para el Proyecto 4 - Práctica Calificada 2
 
 [Grupo2_PC2](https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2)
 
+## Integrantes
+- Lazaro Dionicio, Yorklin Wilmer
+- Luna Jaramillo, Christian Giovanni
+
 ### Ejecución
 ```bash
 # Preparar entorno
