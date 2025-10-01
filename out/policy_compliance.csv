@@ -1,0 +1,4 @@
+host,compliance
+openai.com,FAIL
+example.com,FAIL
+github.com,OK

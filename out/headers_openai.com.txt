@@ -1,0 +1,26 @@
+HTTP/2 403 
+date: Wed, 01 Oct 2025 08:38:12 GMT
+content-type: text/html; charset=UTF-8
+content-length: 6891
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+origin-agent-cluster: ?1
+permissions-policy: accelerometer=(),autoplay=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()
+referrer-policy: same-origin
+server-timing: chlray;desc="987aa47a29b0a9ea"
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+set-cookie: __cf_bm=sz4oih3KnmQ5mh8PTmQt2qhRYANOxzZUJc5Zb483Ais-1759307892-1.0.1.1-mKoWIsFN3WcEl0a.BhbmUkuCdObReriCuZSqV1MZ6tzSYTA9bHK_TckSPwr5HkwYplCkE1zi6kmLroW1T44igGkIOapoInz_D_NjCEO4XNU; path=/; expires=Wed, 01-Oct-25 09:08:12 GMT; domain=.openai.com; HttpOnly; Secure; SameSite=None
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=tcOwNVg0oWIXyIZAkRoZd5K%2B0lzpDZpMG91EAo9AHqLySsO3abvmFMeoCWy2aBOhvqCcvxk%2BMVXkj%2FOAmst2WJY1uZY%2BRgEOffZ2z4Z6PPQKr%2FRa3tiVKp%2Fm8Zc%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+server: cloudflare
+cf-ray: 987aa47a29b0a9ea-LIM
+alt-svc: h3=":443"; ma=86400
+
