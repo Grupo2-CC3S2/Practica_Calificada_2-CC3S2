@@ -21,3 +21,15 @@ setup_file() {
   grep -q "X-Content-Type-Options" out/security_report.csv
   grep -q "Access-Control-Allow-Origin" out/security_report.csv
 }
+
+@test "El reporte marca FAIL si falta un header" {
+  # Arrange
+  rm -f out/security_report.csv
+
+  # Act
+  run bash src/collect_headers.sh
+
+  # Assert
+  [ "$status" -eq 0 ]
+  grep -q "FAIL" out/security_report.csv
+}
