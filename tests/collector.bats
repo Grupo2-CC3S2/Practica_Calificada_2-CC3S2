@@ -46,3 +46,37 @@ setup_file() {
   grep -q "OK" out/security_report.csv
 }
 
+
+# Verificación de archivo CSV no vacío
+@test "El script genera un archivo CSV no vacío" {
+  # Arrange
+  rm -f out/security_report.csv
+
+  # Act
+  run bash src/collect_headers.sh
+
+  # Assert
+  [ "$status" -eq 0 ]
+  [ -f out/security_report.csv ]
+  [ -s out/security_report.csv ]
+}
+
+# Verificación de contenido del CSV
+@test "Endpoints accesibles responden (ejemplo.com)" {
+  # Act
+  run curl -s -o /dev/null -w "%{http_code}" https://example.com
+
+  # Assert
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 200 ]
+}
+
+# Verificación de contenido del CSV
+@test "Endpoints restringidos devuelven error (openai.com)" {
+  # Act
+  run curl -s -o /dev/null -w "%{http_code}" https://openai.com
+
+  # Assert
+  [ "$status" -eq 0 ]
+  [ "$output" -ge 400 ]
+}
