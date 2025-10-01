@@ -37,6 +37,12 @@ tools: # Verifica dependencias (curl, jq, bats)
 	else \
 		echo "bats ya esta instalado."; \
 	fi
+	@if ! command -v unzip >/dev/null 2>&1; then \
+		echo "unzip no esta instalado. Instalando..."; \
+		apt-get install unzip -y; \
+	else \
+		echo "unzip ya esta instalado."; \
+	fi
 
 build: # Prepara la estructura
 	@echo "Preparando estructura"
@@ -46,10 +52,10 @@ build: # Prepara la estructura
 	@mkdir -p ${SRC_DIR}
 	@mkdir -p ${TESTS_DIR}
 	@unzip -o ${DIST_DIR}/scripts.zip
-	@mv dist/collect_headers.sh ${SRC_DIR}/collect_headers.sh
-	@mv dist/collector.bats ${TESTS_DIR}/collector.bats
+	@mv collect_headers.sh ${SRC_DIR}/collect_headers.sh
+	@mv collector.bats ${TESTS_DIR}/collector.bats
 	@chmod +x ${SRC_DIR}/collect_headers.sh
-	@rm -rf ${DIST_DIR}/collect_headers.sh ${DIST_DIR}/collector.bats
+	@rm -rf collect_headers.sh collector.bats
 	@echo "Archivos creados, estructura preparada"
 	@echo "Para ejecutar, make run"
 
