@@ -1,0 +1,15 @@
+Title	URL	Assignees	Status
+Creación de script básico collector_headers.sh	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/6	YorklinPunk	Done
+Creación de Makefile con tareas básicas	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/7	Chriss5-2	Done
+Creación de documentación para collect_headers.sh	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/8	YorklinPunk	Done
+Creación de pruebas bats básicas	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/9	Chriss5-2	Done
+Documentación inicial de la automatización y pruebas bats	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/10	Chriss5-2	Done
+Agregar registro de resultados en archivo .csv	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/11	YorklinPunk	Done
+Verificar creación de archivos .csv no vacíos	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/13	Chriss5-2	Done
+Implementar patrón AAA para las pruebas bats	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/12	Chriss5-2	Done
+Crear archivo policy-rules.sh para verificación de headers	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/15	YorklinPunk	Done
+Implementar 12 Factor App en la automatización	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/14	Chriss5-2	Done
+Implementar pruebas bats básicas para policy-rules.sh	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/16	Chriss5-2	Done
+Verificar idempotencia en los scripts	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/17	Chriss5-2	Done
+Implementar empaquetamiento del directorio	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/18	Chriss5-2	Done
+Implementar correctamente la preparación de entornos con make build	https://github.com/Grupo2-CC3S2/Practica_Calificada_2-CC3S2/issues/19	Chriss5-2	Done
