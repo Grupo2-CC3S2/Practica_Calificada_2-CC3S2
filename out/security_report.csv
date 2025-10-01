@@ -1,0 +1,4 @@
+host,Strict-Transport-Security,Content-Security-Policy,X-Content-Type-Options,Access-Control-Allow-Origin
+openai.com,OK,FAIL,OK,FAIL
+example.com,FAIL,FAIL,FAIL,FAIL
+github.com,OK,OK,OK,FAIL
